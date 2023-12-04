@@ -3,12 +3,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
+    <link rel="stylesheet" href="Css/Mobile.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
             <div class="container-fluid">
               <a class="navbar-brand" href="index.html">Gallery Canvas</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,13 +34,79 @@
                 </ul>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search for Artist" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <button class="btn btn-secondary" type="submit">Search</button>
                 </form>
                 </div>
             </div>
         </nav> 
     </header>
     
-    <p></p>
+    <div>
+      <img src="../images/Main_Page_Art.jpeg" class="rounded float-start" alt="Artistic image">
+      <h3 class="Quotes">The greatness of art is not to find what is common but what is unique.</h3>
+      <h4>"Leonardo de vinci"</h4>
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <h2>Explore Art</h2>
+          <div class="scrolling-wrapper d-flex flex-row">
+
+            <div class="card">
+              <img src="../images/Art_Examples/img-Ixihj48MlMei4GE2hKHfk.jpeg" class="card-img-top" alt="Card Image 1">
+              <div class="card-body">
+                <h5 class="card-title">Card 1</h5>
+              </div>
+            </div>
+    
+            <div class="card">
+              <img src="../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg" class="card-img-top" alt="Card Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Card 2</h5>
+              </div>
+            </div>
+            
+            <div class="card">
+              <img src="../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg" class="card-img-top" alt="Card Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Card 3</h5>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="../images/Art_Examples/Main_Page_Art.jpeg" class="card-img-top" alt="Card Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Card 4</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../images/Art_Examples/img-Ixihj48MlMei4GE2hKHfk.jpeg" class="card-img-top" alt="Card Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Card 5</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg" class="card-img-top" alt="Card Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Card 6</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg" class="card-img-top" alt="Card Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Card 7</h5>
+              </div>
+            </div>
+            <div class="card">
+              <img src="../images/Art_Examples/Main_Page_Art.jpeg" class="card-img-top" alt="Card Image 2">
+              <div class="card-body">
+                <h5 class="card-title">Card 8</h5>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
