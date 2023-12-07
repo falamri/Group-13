@@ -3,7 +3,7 @@ const explorePage = [
     { title: "Card 2", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
     { title: "Card 3", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "20$" },
     { title: "Card 4", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
-    { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
+    // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
 
   ];
   const vitagePage = [
@@ -11,7 +11,7 @@ const explorePage = [
     { title: "Card 2", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
     { title: "Card 3", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "20$" },
     { title: "Card 4", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
-    { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
+    // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
 
   ];
   const poetryPage = [
@@ -19,7 +19,7 @@ const explorePage = [
     { title: "Card 2", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
     { title: "Card 3", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "20$" },
     { title: "Card 4", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
-    { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "70$" },
+    // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "70$" },
 
   ];
 
