@@ -22,6 +22,10 @@ const explorePage = [
     // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "70$" },
 
   ];
+  const User = [
+    { ID: "201943050", Name: "Fares", status: "Log out"},
+    { ID: "201943050", Name: "Fares", status: "Log in"}
+];
 
   function createCard(title, image, price) {
     return `
@@ -66,3 +70,26 @@ const explorePage = [
   renderCards(explorePage);
   renderCards2(vitagePage);
   renderCards3(poetryPage);
+
+
+
+// Login/Page
+
+function loginLoutoutButton(Status){
+  return `
+<a class="nav-link" href="#">${Status}</a>
+`;}
+
+function renderStatus(userData) {
+  const cardContainer = document.getElementById("Log");
+  cardContainer.innerHTML = ""; // Clear previous content
+
+  userData.loginLoutoutButton(item => {
+    const statusHtml = createCard(item.status);
+    cardContainer.innerHTML += statusHtml;
+  });
+
+}
+
+renderStatus(User);
+
