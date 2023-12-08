@@ -1,3 +1,5 @@
+// Cards
+
 const explorePage = [
     { title: "Card 1", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "10$" },
     { title: "Card 2", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
@@ -22,10 +24,6 @@ const explorePage = [
     // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "70$" },
 
   ];
-  const User = [
-    { ID: "201943050", Name: "Fares", status: "Log out"},
-    { ID: "201943050", Name: "Fares", status: "Log in"}
-];
 
   function createCard(title, image, price) {
     return `
@@ -71,25 +69,33 @@ const explorePage = [
   renderCards2(vitagePage);
   renderCards3(poetryPage);
 
+// End
 
+// Not working Login button
 
-// Login/Page
+const User = [
+  { ID: "201943050", Name: "Fares", status: "Log out"},
+  { ID: "201943050", Name: "Fares", status: "Log in"}
+];
 
-function loginLoutoutButton(Status){
-  return `
-<a class="nav-link" href="#">${Status}</a>
-`;}
+function loginLogoutButton(status) {
+  return `<button class="btn btn-secondary me-4" type="submit" onclick="redirectToPage()">${status}</button>`;
+}
 
 function renderStatus(userData) {
   const cardContainer = document.getElementById("Log");
   cardContainer.innerHTML = ""; // Clear previous content
 
-  userData.loginLoutoutButton(item => {
-    const statusHtml = createCard(item.status);
+  userData.loginLogoutButton(item => {
+    const statusHtml = loginLogoutButton(item.status);
     cardContainer.innerHTML += statusHtml;
   });
-
 }
 
 renderStatus(User);
 
+// const redirectToPage = () =>{
+//   window.location.href = /;
+// }
+
+//end
