@@ -74,28 +74,24 @@ const explorePage = [
 // Not working Login button
 
 const User = [
-  { ID: "201943050", Name: "Fares", status: "Log out"},
-  { ID: "201943050", Name: "Fares", status: "Log in"}
+  { ID: "201943050", Name: "Fares", Status: "Logout"},
+  // { ID: "201943050", Name: "Fares", Status: "Log in"}
 ];
 
-function loginLogoutButton(status) {
-  return `<button class="btn btn-secondary me-4" type="submit" onclick="redirectToPage()">${status}</button>`;
+function loginLogoutButton(Status) {
+  return `<button class="btn btn-secondary me-4" type="submit" onclick="redirectToPage()">${Status}</button>`;
 }
 
 function renderStatus(userData) {
   const cardContainer = document.getElementById("Log");
-  cardContainer.innerHTML = ""; // Clear previous content
-
-  userData.loginLogoutButton(item => {
-    const statusHtml = loginLogoutButton(item.status);
-    cardContainer.innerHTML += statusHtml;
-  });
+  const statusHtml = loginLogoutButton(User.Status);
+  cardContainer.innerHTML += statusHtml;
 }
 
 renderStatus(User);
 
-// const redirectToPage = () =>{
-//   window.location.href = /;
-// }
+function redirectToPage() {
+  window.location.href = "../Main/upload.html";
+}
 
-//end
+// end
