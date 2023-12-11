@@ -2,8 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="Css/Mobile.css">
+    <title>Upload</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
@@ -13,14 +12,14 @@
     <header class="pb-5">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/">Gallery Canvas</a> <!-- index.html -->
+              <a class="navbar-brand" href="index.html">Gallery Canvas</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="explore">Explore</a> <!-- exploreArt.html -->
+                    <a class="nav-link" href="#">Explore</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Vitage</a>
@@ -32,9 +31,6 @@
                     <a class="nav-link" href="contact_us.html">Contact Us</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="Login" id="Log">
-                  <!-- Login/Logout button -->
-                </form>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search for Artist" aria-label="Search">
                   <button class="btn btn-secondary" type="submit">Search</button>
@@ -43,47 +39,5 @@
             </div>
         </nav> 
     </header>
-    
-    <div>
-      <img src="../images/Main_Page_Art.jpeg" class="rounded float-start pt-5" alt="Artistic image">
-      <h3 class="Quotes">The greatness of art is not to find what is common but what is unique.</h3>
-      <h4>"Leonardo de vinci"</h4>
-    </div>
-
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-12">
-          <h2>Explore Page</h2>
-          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer">
-                <!-- Cards will be dynamically added here -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-12">
-          <h2>Vitage Page</h2>
-          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer2">
-                <!-- Cards will be dynamically added here -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-12">
-          <h2>Poetry Page</h2>
-          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer3">
-                <!-- Cards will be dynamically added here -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-
-    </footer>  
 </body>
-<script src="./js/main.js"></script>
 </html>
