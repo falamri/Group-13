@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All</title>
+    <link rel="stylesheet" href="Css/Mobile.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <header>
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">Gallery Canvas</a> <!-- index.html -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a> <!-- index.html -->
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Vitage</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Poetry</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search for Artist" aria-label="Search">
+                <button class="btn btn-secondary" type="submit">Search</button>
+              </form>
+              </div>
+          </div>
+      </nav> 
+  </header>
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  
+  <form action="/login" method="post">
+    <div class="mb-3">
+      <label for="exampleInputUsername1" class="form-label">Username</label>
+      <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp">
+      <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="login">
+      <label class="form-check-label" for="login">Login</label>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="register">
+      <label class="form-check-label" for="register">Register</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+ 
+  <table id="userIDTable">
+    <thead>
+        <tr>
+            <th>User ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+</body>
+
+<script>
+async function fetchUserIDs() {
+    const response = await fetch('/data/user');
+    const data = await response.json();
+
+    const tableBody = document.getElementById('userIDTable').getElementsByTagName('tbody')[0];
+
+    data.forEach(({ user_id }) => {
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.textContent = user_id;
+        row.appendChild(cell);
+        tableBody.appendChild(row);
+    });
+}
+
+fetchUserIDs();
+</script>
+</html>
