@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Upload</title>
+</head>
+<body>
+  <form action="/artworks" method="get">
+    <input type="file" name="image" />
+    <input type="submit" value="Upload" />
+  </form>
+
+  <h1>Uploaded Image</h1>
+  <div id="imageContainer"></div>
+
+  <script>
+    fetch('/artworks') // Fetch uploaded image URLs
+      .then(response => response.json())
+      .then(data => {
+        const imageContainer = document.getElementById('imageContainer');
+        data.forEach(image => {
+          const img = document.createElement('img');
+          img.src = image.image_url;
+          img.style.width = '300px'; // Set image width for display
+          imageContainer.appendChild(img);
+        });
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
+</body>
+</html>

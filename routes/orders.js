@@ -3,12 +3,12 @@ const router = express.Router()
 const mysql = require('mysql2');
 
 const {
-  getAllArtists,
-  //getArtist,
-  createArtist,
-  updateArtist,
-  deleteArtist,
-} = require('../controllers/artists')
+    getAllOrders,
+    getOrder,
+    createOrder,
+    updateOrder,
+    deleteOrder,
+} = require('../controllers/orders')
 
 
 var db = mysql.createConnection({
@@ -21,11 +21,11 @@ var db = mysql.createConnection({
 db.connect();
 
 
-router.get('/', getAllArtists)
-//router.get('/:artist_id', getArtist)
-router.post('/', createArtist)
-router.put('/:artist_id', updateArtist)
-router.delete('/:artist_id', deleteArtist) 
+router.get('/', getAllOrders)
+router.get('/:order_id', getOrder)
+router.post('/', createOrder)
+router.put('/:order_id', updateOrder)
+router.delete('/:order_id', deleteOrder) 
 
 //router.route('/').get(getUsers).post(createUser)
 //router.route('/postman').post(createUserPostman)

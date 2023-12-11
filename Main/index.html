@@ -29,20 +29,22 @@
                     <a class="nav-link" href="#">Poetry</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contact_us.html">Contact Us</a>
+                     <a class="nav-link" href="contact_us">Contact Us</a> <!-- contact_us.html -->
                   </li>
                 </ul>
                 <form class="d-flex" role="Login" id="Log">
                   <!-- Login/Logout button -->
                 </form>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search for Artist" aria-label="Search">
-                  <button class="btn btn-secondary" type="submit">Search</button>
-                </form>
+                 <!-- search -->
+                  <input id="artistIdInput" placeholder="Search for Artist" aria-label="Search">
+                  <button class="btn btn-secondary" onclick="searchArtist()">Search</button>
+                
                 </div>
             </div>
         </nav> 
     </header>
+
+    <div id="artistData"></div>
     
     <div>
       <img src="../images/Main_Page_Art.jpeg" class="rounded float-start pt-5" alt="Artistic image">
@@ -81,9 +83,53 @@
       </div>
     </div>
 
+    
+
     <footer>
 
     </footer>  
 </body>
 <script src="./js/main.js"></script>
+<!-- <script src="./js/artworkCard.js"></script> -->
+<script>
+
+  function searchArtist(event) {
+    const artistId = document.getElementById('artistIdInput').value.trim();
+    fetchData(artistId);
+  }
+
+  function handleEnter(event) {
+    if (event.key === 'Enter') {
+      const artistId = document.getElementById('artistIdInput').value.trim();
+      fetchData(artistId);
+    }
+  }
+
+  function fetchData(artistId) {
+    console.log('here')
+    fetch(`/artists?query=${artistId}`)
+      .then(response => response.json())
+      .then(data => {
+        const artistDataDiv = document.getElementById('artistData');
+
+        if (data.length === 0) {
+          artistDataDiv.innerHTML = '<p>No data found</p>';
+        } else {
+          const artistList = data.map(artist => {
+            return `<p><a href="/artists?query=${artistId}">Artist ID: ${artist.artist_id}, Insta: ${artist.insta}</a></p>`;
+          }).join('');
+
+          artistDataDiv.innerHTML = artistList;
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+        const artistDataDiv = document.getElementById('artistData');
+        artistDataDiv.innerHTML = '<p>Error fetching data</p>';
+      });
+  }
+
+  document.getElementById('artistIdInput').addEventListener('keypress', handleEnter);
+</script>
+</body>
 </html>

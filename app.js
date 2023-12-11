@@ -8,8 +8,12 @@ const app = express();
 
 //routers
 const users = require('./routes/users');
-const auth = require('./routes/auth');
 const artists = require('./routes/artists');
+const artworks = require('./routes/artworks');
+const orders = require('./routes/orders');
+const admins = require('./routes/admins');
+const reviews = require('./routes/reviews');
+const auth = require('./routes/auth');
 
 
 
@@ -23,7 +27,6 @@ var db = mysql.createConnection({
 db.connect();
 
 
-//
 //app.use(logger)
 
 //static assets
@@ -32,18 +35,33 @@ app.use(express.static('./public'))
 //parse form data
 app.use(bodyParser.urlencoded({ extended: true }));//false to return strings, true for all types 
 
-//user table data
-app.use('/data/user', users)
+
+//---------
+//user table data router
+app.use('/users', users)
+
+//artist table data
+app.use('/artists', artists)
+
+//artworks table data
+app.use('/artworks', artworks)
+
+//orders table data
+app.use('/orders', orders)
+
+//admins table data
+app.use('/admins', admins)
+
+//reviews table data
+app.use('/reviews', reviews)
 
 //login
 app.use('/login', auth)
-
-//artist table data
-app.use('/artist', artists)
+//---------
 
 
 //home page
-app.get('/index', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/index.html'))
 })
 
@@ -52,6 +70,13 @@ app.get('/explore', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/exploreArt.html'))
 })
 
+app.get('/contact_us', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/contact_us.html'))
+})
+
+app.get('/mock', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/mock.html'))
+})
 
 
 /*
