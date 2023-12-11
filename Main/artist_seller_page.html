@@ -2,25 +2,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../node_modules/@splidejs/splide/dist/css/splide.min.css">
-    <script src="../node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
-    
+    <title>Profile</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-  <section class="splide" aria-label="Splide Basic HTML Example">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide"><img src="../images/Main_Page_Art.jpeg" alt=""></li>
-        <li class="splide__slide"><img src="../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg" alt=""></li>
-        <li class="splide__slide">Slide 03</li>
-      </ul>
+    <header class="pb-5">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">Gallery Canvas</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Vitage</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Poetry</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact_us.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><img src="../images/Logos/add-svgrepo-com.svg" alt="" width="25px"></a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search for Artist" aria-label="Search">
+                  <button class="btn btn-secondary" type="submit">Search</button>
+                </form>
+                </div>
+            </div>
+        </nav> 
+    </header>
+
+    <div id="profilePicture">
+        <!-- <img src="../images/Main_Page_Art.jpeg" class="rounded float-start ps-5 pt-5" alt="Artistic image" width="400px">
+        <p class="pt-5"></p>
+        <h3 class="pt-5">Username</h3> -->
     </div>
-  </section>
 
+    <div class="container mt-4" id="first-container">
+      <div class="row">
+        <div class="col-12">
+          <h2>Explore Page</h2>
+          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer">
+                <!-- Cards will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <h2>Vitage Page</h2>
+          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer2">
+                <!-- Cards will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <h2>Poetry Page</h2>
+          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer3">
+                <!-- Cards will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
 </body>
-<script>
-    new Splide( '.splide' ).mount();
-
-</script>
+<script src="/Main/js/seller_page.js"></script>
+<script src="/Main/js/main.js"></script>
 </html>

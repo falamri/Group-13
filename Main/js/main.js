@@ -30,7 +30,7 @@ const explorePage = [
     <div class="card">
         <img src="${image}" class="card-img-top" alt="Card Image 1">
         <div class="card-body">
-            <h5 class="card-title">${title}</h5>
+            <h5 class="card-title"><a class="text-dark" style="text-decoration:none"  href="artist_user_page.html">${title}</a></h5>
             <h5 class="card-title">Price: ${price}</h5>
         </div>
     </div>
