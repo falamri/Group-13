@@ -5,7 +5,7 @@ const explorePage = [
     { title: "Card 2", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
     { title: "Card 3", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "20$" },
     { title: "Card 4", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
-    // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
+    { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
 
   ];
   const vitagePage = [
@@ -13,7 +13,7 @@ const explorePage = [
     { title: "Card 2", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
     { title: "Card 3", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "20$" },
     { title: "Card 4", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
-    // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
+    { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "15$" },
 
   ];
   const poetryPage = [
@@ -21,7 +21,7 @@ const explorePage = [
     { title: "Card 2", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
     { title: "Card 3", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "20$" },
     { title: "Card 4", image: "../images/Art_Examples/img-Qesw0hQpjdJF8WVViryEg.jpeg",price: "15$" },
-    // { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "70$" },
+    { title: "Card 5", image: "../images/Art_Examples/img-YVBpJVY7ehdLcUH2UKvkk.jpeg",price: "70$" },
 
   ];
 
@@ -30,7 +30,7 @@ const explorePage = [
     <div class="card onclick="window.location.href = '/${title}'";">
         <img src="${image}" class="card-img-top" alt="Card Image 1">
         <div class="card-body">
-            <h5 class="card-title">${title}</h5>
+            <h5 class="card-title"><a class="text-dark" style="text-decoration:none"  href="artist_user_page.html">${title}</a></h5>
             <h5 class="card-title">Price: ${price}</h5>
         </div>
     </div>

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "bootstrap": "^5.3.2",
     "cors": "^2.8.5",
     "ejs": "^3.1.9",
