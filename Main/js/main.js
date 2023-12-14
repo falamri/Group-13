@@ -70,28 +70,3 @@ const explorePage = [
   renderCards3(poetryPage);
 
 // End
-
-// Not working Login button
-
-const User = [
-  { ID: "201943050", Name: "Fares", Status: "Logout"},
-  // { ID: "201943050", Name: "Fares", Status: "Log in"}
-];
-
-function loginLogoutButton(Status) {
-  return `<button class="btn btn-secondary me-4" type="submit" onclick="redirectToPage()">${Status}</button>`;
-}
-
-function renderStatus(userData) {
-  const cardContainer = document.getElementById("Log");
-  const statusHtml = loginLogoutButton(User.Status);
-  cardContainer.innerHTML += statusHtml;
-}
-
-renderStatus(User);
-
-function redirectToPage() {
-  window.location.href = "../Main/upload.html";
-}
-
-// end

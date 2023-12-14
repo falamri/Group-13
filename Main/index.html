@@ -23,7 +23,7 @@
       <h4>"Leonardo de vinci"</h4>
     </div>
 
-    <div class="betweenTwoElements"></div>
+    <div class="betweenTwoElements2"></div>
     
     
           <h1 class="aboutHeader">About Us</h1>
@@ -78,40 +78,6 @@
 <script src="./js/main.js"></script>
 <script src="./js/custom_header.js"></script>
 <script src="./js/custom_footer.js"></script>
-<script>
-
-  function searchArtist(event) {
-    const artistId = document.getElementById('artistNameInput').value.trim();
-    fetchData(artistId);
-  }
-
-  function handleEnter(event) {
-    if (event.key === 'Enter') {
-      const artistId = document.getElementById('artistNameInput').value.trim();
-      fetchData(artistId);
-    }
-  }
-
-  function fetchData(artistId) {
-    fetch(`/search?query=${artistId}`)
-      .then(response => response.json())
-      .then(data => {
-        // Redirect to searchPage.html with query parameter
-        window.location.href = `searchPage?artistId=${artistId}`;
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        const artistDataDiv = document.getElementById('artistData');
-        artistDataDiv.innerHTML = '<p>No artists match your result</p>';
-      });
-  }
-
-  document.getElementById('artistNameInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-      const artistId = event.target.value.trim();
-      fetchData(artistId);
-    }
-  });
-</script>
+<script src="./js/searchLogic.js"></script>
 </body>
 </html>

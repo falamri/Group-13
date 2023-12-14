@@ -11,29 +11,51 @@
     <link rel="stylesheet" href="./Css/styles.css">
   
     <style>
+      .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* Adjust the spacing between cards */
+      padding: 10px;
+      box-sizing: border-box;
+}
         .artist-info {
-          margin-bottom: 20px;
-          border-bottom: 1px solid #ccc;
+          margin-bottom: 10px;
+          margin-top: 10px;
           padding-bottom: 10px;
+          color: #ffeba7;
         }
-      </style>
+    
+        .card {
+          width: calc(45% - 20px); /* Two cards per row with some spacing */
+          margin: 10px;
+          padding: 10px;
+          border-radius: 5px;
+          background-color: #2b2e38;
+          display: inline-block;
+          cursor: pointer;
+          text-decoration-color: #ffeba7;
+          box-sizing: border-box;
+        }
+        
+  </style>
 
     </head>
 <body>
 
 <nav-header></nav-header>
-
-
-    <div class="betweenTwoElements"></div>
-
+<br>
+<!-- <div class="card-container"> -->
     <div id="artistList"></div>
 
+    <div class="betweenTwoElements2"></div>
+
   <info-footer class="mt-auto"></info-footer>
-    
+<!-- </div> -->
 </body>
   <script src="./js/main.js"></script>
   <script src="./js/custom_header.js"></script>
   <script src="./js/custom_footer.js"></script>
+  <script src="./js/searchLogic.js"></script>
 
 <!-- <script src="./js/artworkCard.js"></script> -->
 <script>
@@ -47,17 +69,28 @@
         const artistListDiv = document.getElementById('artistList');
 
         if (artistData.length > 0) {
-          // Display each artist's information
-          artistData.forEach(artist => {
-            const artistInfoDiv = document.createElement('div');
-            artistInfoDiv.classList.add('artist-info');
-            artistInfoDiv.innerHTML = `
-              <p>Username: ${artist.username}</p>
-              <p>Name: ${artist.fname} ${artist.lname}</p>
-              <p>Nationality: ${artist.nationality}</p>
-              <!-- You can display more information here as needed -->
+          let rowDiv; // To handle two cards in each row
+          artistData.forEach((artist, index) => {
+            if (index % 2 === 0) {
+              rowDiv = document.createElement('div');
+              rowDiv.classList.add('row');
+              artistListDiv.appendChild(rowDiv);
+            }
+
+            const artistCard = document.createElement('div');
+            artistCard.classList.add('card');
+            artistCard.innerHTML = `
+              <p class="artist-info">@${artist.username}</p>
+              <p class="artist-info">${artist.lname}, ${artist.fname}</p>
+              <p class="artist-info">${artist.nationality}</p>
             `;
-            artistListDiv.appendChild(artistInfoDiv);
+
+            artistCard.addEventListener('click', () => {
+              // Redirect to artistDetails.html with the artist's ID
+              window.location.href = `artistDetails?artistId=${artistId}`;
+            });
+
+            rowDiv.appendChild(artistCard);
           });
         } else {
           // If no artist data is available

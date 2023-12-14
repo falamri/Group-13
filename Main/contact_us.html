@@ -3,36 +3,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link rel="stylesheet" href="Css/Mobile.css">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="./Css/styles.css">
-</head>
+  </head>
 <body>
 
 <nav-header></nav-header>
+<br>
 
-<div class="betweenTwoElements"></div>
+<h1 class="aboutHeader">How Can We Help!</h1>
 
+  <div id="contactAll">
     <div class="mb-4">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <label for="exampleFormControlInput1" class="aboutText">Email address</label>
+        <input type="email" class="form-control" id="contactBox" placeholder="name@example.com">
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Write your complaint and we will get back to you as soon as possible</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1" class="aboutText">Write your inquiry and we will get back to you as soon as possible</label>
+        <textarea class="form-control" id="contactBox2" rows="5"></textarea>
       </div>
       <div class="mb-4">
-        <button type="submit" class="btn btn-primary mb-3" onclick="window.location.href = '/hi'">Submit Complaint</button>
+        <button type="submit" class="btn btn-primary mb-3" id="contactBtn" onclick="window.location.href = '/hi'">Submit Complaint</button>
       </div>
 
-      
+      <div class="betweenTwoElements"></div>
+
+    </div>
   <info-footer class="mt-auto"></info-footer>
     
 </body>
 <script src="./js/main.js"></script>
 <script src="./js/custom_header.js"></script>
 <script src="./js/custom_footer.js"></script>
+<script src="./js/searchLogic.js"></script>
 
 </html>

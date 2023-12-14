@@ -15,43 +15,35 @@
 <body>
   <nav-header></nav-header>
 
-  <br><br><br><br><br>
-  <br><br><br><br><br>
+  <div class="container mt-4" id="first-container">
+    <div class="row">
+      <div class="col-12">
+        <div class="scrolling-wrapper d-flex flex-row" id="cardContainer">
+              <!-- Cards will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="scrolling-wrapper d-flex flex-row" id="cardContainer2">
+              <!-- Cards will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="scrolling-wrapper d-flex flex-row" id="cardContainer3">
+              <!-- Cards will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
   
-  <form action="/login" method="post">
-    <div class="mb-3">
-      <label for="exampleInputUsername1" class="form-label">Username</label>
-      <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp">
-      <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="login">
-      <label class="form-check-label" for="login">Login</label>
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="register">
-      <label class="form-check-label" for="register">Register</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-  <br><br><br><br><br>
-  <br><br><br><br><br>
- 
-  <table id="userIDTable">
-    <thead>
-        <tr>
-            <th>User ID</th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
-
+<div class="betweenTwoElements"></div>
 
 <info-footer class="mt-auto"></info-footer>
     
@@ -59,23 +51,6 @@
 <script src="./js/main.js"></script>
 <script src="./js/custom_header.js"></script>
 <script src="./js/custom_footer.js"></script>
+<script src="./js/searchLogic.js"></script>
 
-<script>
-async function fetchUserIDs() {
-    const response = await fetch('/data/user');
-    const data = await response.json();
-
-    const tableBody = document.getElementById('userIDTable').getElementsByTagName('tbody')[0];
-
-    data.forEach(({ user_id }) => {
-        const row = document.createElement('tr');
-        const cell = document.createElement('td');
-        cell.textContent = user_id;
-        row.appendChild(cell);
-        tableBody.appendChild(row);
-    });
-}
-
-fetchUserIDs();
-</script>
 </html>
