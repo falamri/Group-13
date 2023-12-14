@@ -90,6 +90,9 @@ app.get('/seller', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/artist_seller_page.html'))
 })
 
+app.get('/search', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/searchPage.html'))
+})
 
 app.get('/user', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/artist_user_page.html'))
@@ -100,30 +103,6 @@ app.get('/mock', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/mock.html'))
 })
 
-
-/*
-app.get('/data/user/query', (req, res)=>{
-  const {search, limit} = req.query
-  let sortedProducts = {...products}
-
-  if(search){
-    sortedProducts = sortedProducts.filter((product)=>{
-      return product.name.startsWith(search)
-    })
-  }
-
-  if(limit){
-    sortedProducts = sortedProducts.slice(0,Number(limit))
-  }
-
-  if(sortedProducts.length < 1){
-    return res.send(200).json({success: true, data: []})
-  }
-
-  res.status(200).json(sortedProducts)
-
-})
-*/
 
 const jwt = require('jsonwebtoken');
 const secretKey = 'your_secret_key';

@@ -133,17 +133,9 @@
   fetch(`/artists?query=${artistId}`)
     .then(response => response.json())
     .then(data => {
-      const artistDataDiv = document.getElementById('artistData');
-
-      if (data.length === 0) {
-        artistDataDiv.innerHTML = '<p>No data found</p>';
-      } else {
-        const artistList = data.map(artist => {
-          return `<p> username:${artist.username} Name: ${artist.fname} ${artist.lname}, Nationality: ${artist.nationality}</p>`;
-        }).join('');
-
-        artistDataDiv.innerHTML = artistList;
-      }
+      
+      window.location.href = `artists.html?query=${JSON.stringify(data)}`;
+    
     })
     .catch(error => {
       console.error('Error fetching data:', error);

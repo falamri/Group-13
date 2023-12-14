@@ -69,4 +69,27 @@
 	    </div>
 	</div>
 </body>
+<script>
+	// Get the checkbox element
+const checkbox = document.getElementById('reg-log');
+
+// Add an event listener to detect changes in the checkbox state
+checkbox.addEventListener('change', function() {
+  // Get the current URL
+  let currentURL = window.location.href;
+
+  // Modify the URL based on checkbox state
+  if (checkbox.checked) {
+    // Append a parameter to the URL if the checkbox is checked
+    currentURL = `${currentURL}?register`;
+  } else {
+    // Remove the parameter if the checkbox is unchecked
+    currentURL = currentURL.split('?')[0];
+  }
+
+  // Update the URL in the browser without reloading the page
+  history.pushState({}, '', currentURL);
+});
+
+</script>
 </html>
