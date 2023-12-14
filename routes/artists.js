@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 const {
   getAllArtists,
-  //getArtist,
+  getArtist,
   createArtist,
   updateArtist,
   deleteArtist,
@@ -22,7 +22,7 @@ db.connect();
 
 
 router.get('/', getAllArtists)
-//router.get('/:artist_id', getArtist)
+router.get('/:artist_id', getArtist)
 router.post('/', createArtist)
 router.put('/:artist_id', updateArtist)
 router.delete('/:artist_id', deleteArtist) 

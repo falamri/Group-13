@@ -13,7 +13,9 @@ const artworks = require('./routes/artworks');
 const orders = require('./routes/orders');
 const admins = require('./routes/admins');
 const reviews = require('./routes/reviews');
+const searches = require('./routes/searches');
 const auth = require('./routes/auth');
+
 
 
 
@@ -57,6 +59,9 @@ app.use('/reviews', reviews)
 
 //login
 app.use('/login', auth)
+
+//search
+app.use('/search', searches)
 //---------
 
 
@@ -85,18 +90,27 @@ app.get('/contact_us', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/contact_us.html'))
 })
 
-
 app.get('/seller', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/artist_seller_page.html'))
 })
 
-app.get('/search', (req, res) => {
+//search Page
+app.get('/searchPage', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/searchPage.html'))
 })
 
 app.get('/user', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/artist_user_page.html'))
 })
+
+app.get('/artworkDetails', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/artworkDetails.html'))
+})
+
+app.get('/artistDetails', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/artistDetails.html'))
+})
+
 
 
 app.get('/mock', (req, res) => {

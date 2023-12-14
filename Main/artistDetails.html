@@ -1,0 +1,101 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Artist Details</title>
+        <link rel="stylesheet" href="Css/Mobile.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="./Css/styles.css">
+      </head>
+    <body>
+    
+    <nav-header></nav-header>
+
+    <div class="betweenTwoElements"></div>
+
+    <div id="profilePicture">
+        <!-- <img src="../images/Main_Page_Art.jpeg" class="rounded float-start ps-5 pt-5" alt="Artistic image" width="400px">
+        <p class="pt-5"></p>
+        <h3 class="pt-5">Username</h3> -->
+    </div>
+
+    <div id="artistDetails">
+    <!-- Artist details will be displayed here -->
+    </div>
+
+    <div class="container mt-4" id="first-container">
+      <div class="row">
+        <div class="col-12">
+          <h2>View Latest Creations</h2>
+          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer">
+                <!-- Cards will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <h2>View Best Rated</h2>
+          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer2">
+                <!-- Cards will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-12">
+          <h2>View All Work</h2>
+          <div class="scrolling-wrapper d-flex flex-row" id="cardContainer3">
+                <!-- Cards will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <info-footer class="mt-auto"></info-footer>
+
+  </body>
+    <script src="./js/main.js"></script>
+    <script src="./js/custom_header.js"></script>
+    <script src="./js/custom_footer.js"></script>
+    <script src="/Main/js/seller_page.js"></script>
+    <script>
+      
+      const artistId = 1; // Replace with the specific artist ID
+
+      fetch(`/artists/${artistId}`)
+        .then(response => response.json())
+        .then(artist => {
+          const artistDetails = document.getElementById('artistDetails');
+          artistDetails.innerHTML = ''; // Clear previous details
+
+          const instagram = document.createElement('p');
+          instagram.textContent = `Instagram: @${artist.insta}`;
+          artistDetails.appendChild(instagram);
+
+          const nationality = document.createElement('p');
+          nationality.textContent = `Nationality: ${artist.nationality}`;
+          artistDetails.appendChild(nationality);
+
+          const bioTitle = document.createElement('h1');
+          bioTitle.textContent = 'Bio:';
+          artistDetails.appendChild(bioTitle);
+
+          const bio = document.createElement('h2');
+          bio.textContent = `${artist.bio}`;
+          artistDetails.appendChild(bio);
+
+          // Add other artist details similarly...
+
+        })
+        .catch(error => {
+          console.error('Error fetching artist details:', error);
+        });
+  </script>
+</body>
+</html>

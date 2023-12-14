@@ -4,7 +4,8 @@ const mysql = require('mysql2');
 
 const {
   getAllArtworks,
-  getArtwork,
+  //getArtwork,
+  getArtworkDetails,
   createArtwork,
   updateArtwork,
   deleteArtwork,
@@ -25,8 +26,9 @@ db.connect();
 //assign the values to that artwork
 router.get('/', getAllArtworks)
 //change back to artwork id
-router.get('/:artwork_url', getArtwork)
+//router.get('/:artwork_url', getArtwork)
 //add a /uploads
+router.get('/:artwork_id', getArtworkDetails)
 router.post('/uploads/:artwork_url', createArtwork)
 router.put('/:artwork_id', updateArtwork)
 router.delete('/:artwork_id', deleteArtwork) 

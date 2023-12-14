@@ -9,52 +9,71 @@
     <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="./Css/styles.css">
-  </head>
+  
+    <style>
+        .artist-info {
+          margin-bottom: 20px;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 10px;
+        }
+      </style>
+
+    </head>
 <body>
-    <header class="pb-5">
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/home">Gallery Canvas</a> <!-- index.html -->
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="explore">Explore</a> <!-- exploreArt.html -->
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="artwork/vintage">Vintage</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="artwork/poetry">Poetry</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="contact_us">Contact Us</a> <!-- contact_us.html -->
-                  </li>
-                  <li>
-                    <a class="nav-link" href="/">Login/SignUp</a> <!-- login_signup.html -->
-                  </li>
-                </ul>
-               
-                 <!-- search -->
-                 <input id="artistNameInput" placeholder="Search for Artist" aria-label="Search">
-                  <button class="btn btn-secondary" onclick="searchArtist()">Search</button>
-                
-                </div>
-            </div>
-        </nav> 
-    </header>
+
+<nav-header></nav-header>
 
 
+    <div class="betweenTwoElements"></div>
 
+    <div id="artistList"></div>
 
+  <info-footer class="mt-auto"></info-footer>
+    
 </body>
-<script src="./js/main.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/custom_header.js"></script>
+  <script src="./js/custom_footer.js"></script>
+
 <!-- <script src="./js/artworkCard.js"></script> -->
 <script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const artistId = urlParams.get('artistId');
 
+  if (artistId) {
+    fetch(`/search?query=${artistId}`)
+      .then(response => response.json())
+      .then(artistData => {
+        const artistListDiv = document.getElementById('artistList');
 
+        if (artistData.length > 0) {
+          // Display each artist's information
+          artistData.forEach(artist => {
+            const artistInfoDiv = document.createElement('div');
+            artistInfoDiv.classList.add('artist-info');
+            artistInfoDiv.innerHTML = `
+              <p>Username: ${artist.username}</p>
+              <p>Name: ${artist.fname} ${artist.lname}</p>
+              <p>Nationality: ${artist.nationality}</p>
+              <!-- You can display more information here as needed -->
+            `;
+            artistListDiv.appendChild(artistInfoDiv);
+          });
+        } else {
+          // If no artist data is available
+          artistListDiv.innerHTML = '<p>No artist information available</p>';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching artist data:', error);
+        const artistListDiv = document.getElementById('artistList');
+        artistListDiv.innerHTML = '<p>Error fetching artist information</p>';
+      });
+  } else {
+    // Handle case where artistId is not available
+    const artistListDiv = document.getElementById('artistList');
+    artistListDiv.innerHTML = '<p>No artist information available</p>';
+  }
 </script>
 </body>
 </html>

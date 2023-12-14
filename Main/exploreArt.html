@@ -13,40 +13,7 @@
 </head>
 
 <body>
-  <header class="pb-5">
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/home">Gallery Canvas</a> <!-- index.html -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="home">Home</a> <!-- exploreArt.html -->
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Vintage</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Poetry</a>
-              </li>
-              <li class="nav-item">
-                 <a class="nav-link" href="contact_us">Contact Us</a> <!-- contact_us.html -->
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">Login/SignUp</a> <!-- login_signup.html -->
-             </li>
-            </ul>
-             <!-- search -->
-              <input id="artistNameInput" placeholder="Search for Artist" aria-label="Search">
-              <button class="btn btn-secondary" onclick="searchArtist()">Search</button>
-            
-            </div>
-        </div>
-    </nav> 
-</header>
-
+  <nav-header></nav-header>
 
   <br><br><br><br><br>
   <br><br><br><br><br>
@@ -86,7 +53,12 @@
 </table>
 
 
+<info-footer class="mt-auto"></info-footer>
+    
 </body>
+<script src="./js/main.js"></script>
+<script src="./js/custom_header.js"></script>
+<script src="./js/custom_footer.js"></script>
 
 <script>
 async function fetchUserIDs() {

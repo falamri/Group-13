@@ -22,16 +22,31 @@ db.connect();
     });
   };
   
-  const getArtwork = (req, res) => {
-    console.log('here baby!!');
-    connection.query('SELECT image_url FROM artwork', (err, results) => {
-      if (err) throw err;
-      res.json(results);
+  // const getArtwork = (req, res) => {
+  //   connection.query('SELECT image_url FROM artwork', (err, results) => {
+  //     if (err) throw err;
+  //     res.json(results);
+  //   });
+  // }
+
+  const getArtworkDetails = (req, res) => {
+    const artworkId = req.params.artwork_id; // Get artwork_id from URL parameter
+    const sql = 'SELECT * FROM artwork WHERE artwork_id = ?'; // Select artwork by ID
+    db.query(sql, artworkId, (err, results) => {
+      if (err) {
+        res.status(500).json({ error: 'Internal server error' });
+        throw err;
+      }
+      if (results.length === 0) {
+        res.status(404).json({ error: 'Artwork not found' });
+      } else {
+        res.status(200).json(results[0]); // Return artwork details as JSON response
+      }
     });
-  }
+  };
+
   
   const createArtwork = (req, res) => {
-    console.log('here baby!!')
     const imageUrl = `/uploads/${req.file.filename}`;
     // Save image URL to database
     // const sql = 'INSERT INTO artwork (image_url) VALUES (?)';
@@ -47,7 +62,8 @@ db.connect();
 
 module.exports = {
     getAllArtworks,
-    getArtwork,
+    //getArtwork,
+    getArtworkDetails,
     createArtwork,
     updateArtwork,
     deleteArtwork,

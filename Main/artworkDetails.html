@@ -1,0 +1,87 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Artwork Details</title>
+        <link rel="stylesheet" href="Css/Mobile.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="./Css/styles.css">
+      </head>
+    <body>
+    
+    <nav-header></nav-header>
+
+    <div class="betweenTwoElements"></div>
+
+    <h1>ART WORK DETAILS</h1>
+    <div id="Artwork Details">
+    <!-- Artwork details will be displayed here -->
+  </div>
+
+  <div class="betweenTwoElements"></div>
+
+  <info-footer class="mt-auto"></info-footer>
+
+</body>
+  <script src="./js/main.js"></script>
+  <script src="./js/custom_header.js"></script>
+  <script src="./js/custom_footer.js"></script>
+  <script>
+    // JavaScript to fetch artwork details and display them
+    const artworkId = 1;
+    fetch(`/artworks/${artworkId}`)
+      .then(response => response.json())
+      .then(artwork => {
+        const artworkDetails = document.getElementById('artworkDetails');
+        // Create HTML elements to display artwork details
+        const title = document.createElement('h2');
+        title.textContent = artwork.title;
+        artworkDetails.appendChild(title);
+
+        const description = document.createElement('p');
+        description.textContent = artwork.description;
+        artworkDetails.appendChild(description);
+
+        const buyingPrice = document.createElement('p');
+        buyingPrice.textContent = `Buying Price: $${artwork.buying_price}`;
+        artworkDetails.appendChild(buyingPrice);
+
+        const postedDate = document.createElement('p');
+        postedDate.textContent = `Posted Date: ${artwork.posted_date}`;
+        artworkDetails.appendChild(postedDate);
+
+        const imageUrl = document.createElement('img');
+        imageUrl.src = artwork.image_url;
+        imageUrl.alt = artwork.title;
+        artworkDetails.appendChild(imageUrl);
+
+        const auctionPrice = document.createElement('p');
+        auctionPrice.textContent = `Auction Price: $${artwork.auction_price}`;
+        artworkDetails.appendChild(auctionPrice);
+
+        const type = document.createElement('p');
+        type.textContent = `Type: ${artwork.type}`;
+        artworkDetails.appendChild(type);
+
+        const period = document.createElement('p');
+        period.textContent = `Period: ${artwork.period}`;
+        artworkDetails.appendChild(period);
+
+        const size = document.createElement('p');
+        size.textContent = `Size: ${artwork.size}`;
+        artworkDetails.appendChild(size);
+
+        const medium = document.createElement('p');
+        medium.textContent = `Medium: ${artwork.medium}`;
+        artworkDetails.appendChild(medium);
+
+      })
+      .catch(error => {
+        console.error('Error fetching artwork details:', error);
+      });
+  </script>
+</body>
+</html>

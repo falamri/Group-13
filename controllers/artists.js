@@ -50,6 +50,23 @@ const getAllArtists = (req, res) => {
   });
 };
 
+const getArtist = (req, res) => {
+  const artistId = req.params.artist_id; // Get artist_id from URL parameter
+  const sql = 'SELECT * FROM artist WHERE artist_id = ?'; // Select artist by ID
+  db.query(sql, artistId, (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Internal server error' });
+      throw err;
+    }
+    if (results.length === 0) {
+      res.status(404).json({ error: 'Artist not found' });
+    } else {
+      res.status(200).json(results[0]); // Return artist details as JSON response
+    }
+  });
+};
+
+
 
 const createArtist = (req, res) => {
   const { artist_name, artist_genre } = req.body;
@@ -114,7 +131,7 @@ const deleteArtist = (req, res) => {
 
 module.exports = {
   getAllArtists,
-  //getArtist,
+  getArtist,
   createArtist,
   updateArtist,
   deleteArtist,

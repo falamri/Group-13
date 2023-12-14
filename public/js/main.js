@@ -25,7 +25,7 @@ const explorePage = [
 
   function createCard(title, image, price) {
     return `
-    <div class="card" onclick="window.location.href = '/data/user'">
+    <div class="card" onclick="window.location.href = '/artworkDetails'">
         <img src="${image}" class="card-img-top" alt="Card Image 1">
         <div class="card-body">
             <h5 class="card-title">${title}</h5>
