@@ -11,7 +11,18 @@
   </form>
 
   <h1>Uploaded Image</h1>
-  <div id="imageContainer"></div>
+  <div class="container mt-4" id="imageContainer">
+    <div class="row">
+      <div class="col-12">
+        <h2>Vintage Art</h2>
+        <div class="scrolling-wrapper d-flex flex-row" id="cardContainer">
+              <!-- Cards will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  
 
   <script>
     fetch('/artworks') // Fetch uploaded image URLs
@@ -19,8 +30,8 @@
       .then(data => {
         const imageContainer = document.getElementById('imageContainer');
         data.forEach(image => {
-          const img = document.createElement('img');
-          img.src = image.image_url;
+          const img = document.createElement('././/');
+          img.src =  image.image_url;
           img.style.width = '300px'; // Set image width for display
           imageContainer.appendChild(img);
         });

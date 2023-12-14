@@ -32,3 +32,28 @@ footer {
   max-width: 100px; 
   height: auto;
 }
+
+#artistNameInput{
+  padding: 13px 20px;
+  padding-left: 5px;
+  height: 44px;
+  width: 240px;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #ffeba7;
+  background-color: #1f2029;
+  text-decoration-color: #f40008;
+  border: none;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+  
+}
+
+#artistNameInput::placeholder{
+  color: #ffeba7;
+}
