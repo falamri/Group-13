@@ -6,11 +6,11 @@ Gallery Canvas is an online platform dedicated to art enthusiasts, connecting ar
 
 ## Table of contents
 
-Installation
-Features
-Usage
-Contributing
-License
+- Installation
+- Features
+- Usage
+- Contributing
+- License
 
 # Installation
 
