@@ -15,11 +15,16 @@ db.connect();
 
 const getAllArtists = (req, res) => {
   const { query, filter, limit } = req.query;
-  let sql = 'SELECT * FROM art.artist';
+  let sql = 'SELECT * FROM art.artist AS a JOIN art.user AS u ON a.user_id = u.user_id';
 
   // Add query condition if provided
   if (query) {
-    sql += ` WHERE artist_id LIKE '%${query}%' OR insta LIKE '%${query}%'`;
+    sql += ` WHERE 
+      a.artist_id LIKE '%${query}%' OR 
+      a.insta LIKE '%${query}%' OR 
+      u.fname LIKE '%${query}%' OR 
+      u.lname LIKE '%${query}%' OR 
+      u.username LIKE '%${query}%'`;
   }
 
   if (filter) {
@@ -77,7 +82,7 @@ const updateArtist = (req, res) => {
     updateQuery += 'insta = ?, ';
     updateValues.push(artist_name);
   }
-//delete this?
+
   if (artist_genre) {
     updateQuery += 'dgfg = ?, ';
     updateValues.push(artist_genre);

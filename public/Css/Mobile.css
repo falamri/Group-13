@@ -1,8 +1,10 @@
 .Quotes{
     padding-top: 200px;
 }
-.container{
-    padding-top: 300px;
+
+#first-container{
+  padding-top: 300px;
+
 }
 
 .scrolling-wrapper {
@@ -13,6 +15,20 @@
   .card {
     flex: 0 0 auto;
     width: 18rem;
-    margin-right: 10px; /* Optional: Adjust the margin between cards */
+    margin-right: 10px;
   }
 
+
+footer {
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.logos img {
+  margin: 5px;
+  max-width: 100px; 
+  height: auto;
+}

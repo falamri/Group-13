@@ -60,9 +60,19 @@ app.use('/login', auth)
 //---------
 
 
-//home page
+//Login/signup page
 app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/login_signup.html'))
+})
+
+//home page
+app.get('/home', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/index.html'))
+})
+
+//about us page
+app.get('/about', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/about.html'))
 })
 
 //explore page
@@ -70,9 +80,21 @@ app.get('/explore', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/exploreArt.html'))
 })
 
+//contact us page
 app.get('/contact_us', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/contact_us.html'))
 })
+
+
+app.get('/seller', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/artist_seller_page.html'))
+})
+
+
+app.get('/user', (req, res) => {
+  res.sendFile(path.resolve(__dirname, './Main/artist_user_page.html'))
+})
+
 
 app.get('/mock', (req, res) => {
   res.sendFile(path.resolve(__dirname, './Main/mock.html'))
