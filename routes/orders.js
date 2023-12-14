@@ -27,8 +27,4 @@ router.post('/', createOrder)
 router.put('/:order_id', updateOrder)
 router.delete('/:order_id', deleteOrder) 
 
-//router.route('/').get(getUsers).post(createUser)
-//router.route('/postman').post(createUserPostman)
-//router.route('/:user_id').put(updateUser).delete(deleteUser)
-
 module.exports = router

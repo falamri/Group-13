@@ -27,8 +27,4 @@ router.post('/', createAdmin)
 router.put('/:admin_id', updateAdmin)
 router.delete('/:admin_id', deleteAdmin) 
 
-//router.route('/').get(getUsers).post(createUser)
-//router.route('/postman').post(createUserPostman)
-//router.route('/:user_id').put(updateUser).delete(deleteUser)
-
 module.exports = router

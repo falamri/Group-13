@@ -168,28 +168,6 @@ app.get('/data/car/query', (req, res) => {
      res.status(200).json(results);
   });
  });
-
-
-
-
-
-
-
-/*specific review id
-app.get('/data/user/:user_id/review/:reviewID', (req, res) => {
-  const sql = 'SELECT username, rating, comment, date FROM review WHERE user_id = ?';
-  let query = db.query(sql, req.params.user_id, (err, results) => {
-      if (err) throw err;
-
-      if(results.length === 0){
-        return res.status(404).send('User Does Not Exist')
-      }
-
-      res.send(results);
-
-  });
-});
-*/
  
   app.all('*', (req, res) => {
     res.status(404).send('<h1> resource not found </h1>')

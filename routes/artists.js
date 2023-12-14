@@ -27,8 +27,5 @@ router.post('/', createArtist)
 router.put('/:artist_id', updateArtist)
 router.delete('/:artist_id', deleteArtist) 
 
-//router.route('/').get(getUsers).post(createUser)
-//router.route('/postman').post(createUserPostman)
-//router.route('/:user_id').put(updateUser).delete(deleteUser)
 
 module.exports = router

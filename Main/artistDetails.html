@@ -16,11 +16,7 @@
 
     <div class="betweenTwoElements"></div>
 
-    <div id="profilePicture">
-        <!-- <img src="../images/Main_Page_Art.jpeg" class="rounded float-start ps-5 pt-5" alt="Artistic image" width="400px">
-        <p class="pt-5"></p>
-        <h3 class="pt-5">Username</h3> -->
-    </div>
+    <div id="profilePicture"></div>
 
     <div id="artistDetails">
     <!-- Artist details will be displayed here -->
@@ -92,8 +88,6 @@
           const bio = document.createElement('h2');
           bio.textContent = `${artist.bio}`;
           artistDetails.appendChild(bio);
-
-          // Add other artist details similarly...
 
         })
         .catch(error => {

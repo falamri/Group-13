@@ -21,13 +21,6 @@ db.connect();
       res.status(200).json(results); // Return artworks as JSON response
     });
   };
-  
-  // const getArtwork = (req, res) => {
-  //   connection.query('SELECT image_url FROM artwork', (err, results) => {
-  //     if (err) throw err;
-  //     res.json(results);
-  //   });
-  // }
 
   const getArtworkDetails = (req, res) => {
     const artworkId = req.params.artwork_id; // Get artwork_id from URL parameter
@@ -62,7 +55,6 @@ db.connect();
 
 module.exports = {
     getAllArtworks,
-    //getArtwork,
     getArtworkDetails,
     createArtwork,
     updateArtwork,
